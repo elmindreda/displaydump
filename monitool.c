@@ -192,6 +192,14 @@ static void print_monitors(int depth)
 
 int main(int argc, char** argv)
 {
+    printf("Desktop MonitorCount: %i VirtualScreen: %i,%i,%i,%i RemoteSession: %i\n",
+           GetSystemMetrics(SM_CMONITORS),
+           GetSystemMetrics(SM_XVIRTUALSCREEN),
+           GetSystemMetrics(SM_YVIRTUALSCREEN),
+           GetSystemMetrics(SM_CXVIRTUALSCREEN),
+           GetSystemMetrics(SM_CYVIRTUALSCREEN),
+           GetSystemMetrics(SM_REMOTESESSION));
+
     print_devices(0);
     print_monitors(0);
 }
