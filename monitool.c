@@ -84,6 +84,33 @@ static void print_modes(int depth, const DISPLAY_DEVICEW* device)
         if (dm.dmFields & DM_DISPLAYFREQUENCY)
             printf(" DisplayFrequency: %u", dm.dmDisplayFrequency);
 
+        if (device->StateFlags & DISPLAY_DEVICE_MODESPRUNED)
+        {
+            printf(" Test: ");
+
+            const LONG result = ChangeDisplaySettingsExW(device->DeviceName,
+                                                         &dm,
+                                                         NULL,
+                                                         CDS_TEST,
+                                                         NULL);
+            if (result == DISP_CHANGE_SUCCESSFUL)
+                printf("SUCCESSFUL");
+            if (result == DISP_CHANGE_BADDUALVIEW)
+                printf("BADDUALVIEW");
+            if (result == DISP_CHANGE_BADFLAGS)
+                printf("BADFLAGS");
+            if (result == DISP_CHANGE_BADMODE)
+                printf("BADMODE");
+            if (result == DISP_CHANGE_BADPARAM)
+                printf("BADPARAM");
+            if (result == DISP_CHANGE_FAILED)
+                printf("FAILED");
+            if (result == DISP_CHANGE_NOTUPDATED)
+                printf("NOTUPDATED");
+            if (result == DISP_CHANGE_RESTART)
+                printf("RESTART");
+        }
+
         putchar('\n');
     }
 }
