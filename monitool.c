@@ -200,7 +200,7 @@ static BOOL CALLBACK monitor_callback(HMONITOR monitor, HDC dc, LPRECT rect, LPA
 
     device = utf16_to_utf8(mi.szDevice);
 
-    indent(data);
+    indent((int) data);
     printf("Monitor Device: \"%s\" Rect: %i,%i,%i,%i", device, rect->left, rect->top, rect->right, rect->bottom);
 
     if (mi.dwFlags & MONITORINFOF_PRIMARY)
