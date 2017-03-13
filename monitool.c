@@ -1,4 +1,4 @@
-// Copyright © Camilla Löwy Berglund <elmindreda@glfw.org>
+// Copyright © Camilla Löwy <elmindreda@glfw.org>
 // 
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
