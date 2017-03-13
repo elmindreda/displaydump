@@ -1,4 +1,4 @@
-# Idiosyncratic Win32 monitor information dumper
+# Idiosyncratic Win32 monitor and display information dumper
 
 ## About
 
